@@ -1,1 +1,29 @@
 @import "bootstrap";
+
+body {
+  background-color: gray;
+}
+
+.home {
+  position: absolute;
+  top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: #343a40;
+}
+
+.header-right {
+  float: right;
+
+}
+
+.header-left {
+  float: left;
+  color: white;
+}
+

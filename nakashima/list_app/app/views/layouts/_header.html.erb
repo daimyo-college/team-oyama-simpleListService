@@ -1,10 +1,10 @@
-<header class="navbar navbar-dark bg-dark">
+<header>
   <div class="container">
-    <%= link_to "app_list", '#' %>
-    <nav>
-      <ul class="nav navbar-nav navbar-light">
-        <li><%= link_to "login", "#" %></li>
-      </ul>
-    </nav>
+    <div class="header-left mt-1">
+      <h1><%= link_to 'list_app', '#', :style=>"color:white;"%></h1>
+    </div>
+    <div class="header-right mt-3">
+      <p><%= link_to 'login', '#', class: "btn btn-primary" %></p>
+    </div>
   </div>
 </header>
