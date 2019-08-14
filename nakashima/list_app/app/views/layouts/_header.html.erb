@@ -1,10 +1,17 @@
 <header>
   <div class="container">
     <div class="header-left mt-1">
-      <h1><%= link_to 'list_app', '#', :style=>"color:white;"%></h1>
+      <h1><%= link_to 'list_app', home_path, :style=>"color:white;"%></h1>
     </div>
     <div class="header-right mt-3">
-      <p><%= link_to 'login', '#', class: "btn btn-primary" %></p>
+      <div class="row">
+        <% if logged_in? %>
+          <p><%= link_to 'login', login_path %></p>
+        <% else %>
+          <p><%= link_to 'logout', logout_path, method: :delete %></p>
+          <p><%= link_to 'mypage', current_user %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </header>

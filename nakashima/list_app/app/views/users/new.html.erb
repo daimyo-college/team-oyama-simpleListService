@@ -1,8 +1,9 @@
 <div class="text-center">
   <div class="top-wrapper">
-    <h1>signup page</h1>
+    <h1>Signup Page</h1>
   </div>
     <%= form_with model: @user, local: true do |f| %>
+      <%= render 'shared/error_messages'%>
       <p>
         <%= f.label :name %>
         <%= f.text_field :name %>
