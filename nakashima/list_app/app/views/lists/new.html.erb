@@ -1,0 +1,23 @@
+<div class="text-center">
+  <div class="top-wrapper">
+    <h1>リストタイトル</h1>
+  </div>
+    <%= form_with model: @list, local: true do |f| %>
+      <%= render 'shared/error_messages'%>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+      
+      <p>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+      </p>
+
+      <p>
+        <%= f.submit "リストの詳細を登録(未実装)", class: "btn btn-primary" %>
+        <%= f.submit "登録してuser#showに行く", class: "btn btn-primary" %>
+      </p>
+    <% end %>
+</div>
+

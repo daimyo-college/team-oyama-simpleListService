@@ -42,9 +42,10 @@ header {
   }
 }
 
-// .field_with_errors {
-//   @extend .has-error;
-//   .form-control {
-//     color: $state-danger-text;
-//   }
-// }
+.user-show-top {
+  margin-bottom: 50px;
+}
+
+.user-show-body {
+  margin-bottom: 50px;
+}

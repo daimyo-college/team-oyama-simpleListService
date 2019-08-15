@@ -1,0 +1,14 @@
+<div class="text-center">
+  <div class="top-wrapper">
+    <h1>みんなのリスト</h1>
+  </div>
+  <div class="container">
+    <% @lists.each do |list| %>
+    <p>
+      <%= link_to list.user.name,  user_path(list.user) %>.
+      <%= list.content %>
+    </p>
+    <% end %>
+  </div>
+</div>
+
