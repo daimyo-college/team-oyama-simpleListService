@@ -6,9 +6,11 @@
     <div class="user-show-body">
       <p><%= render @lists %></p>
     </div>
-    <div class="user-show-button">
-      <p><%= link_to 'リストを作成する', new_list_url, class: "btn btn-primary" %></p>
-    </div>
+    <% if @user.id == current_user.id %>
+      <div class="user-show-button">
+        <p><%= link_to 'リストを作成する', new_list_url, class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 

@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  skip_before_action :login_required
+
   def index
     @lists = List.all
   end
