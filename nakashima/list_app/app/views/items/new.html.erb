@@ -1,8 +1,8 @@
 <div class="text-center">
   <div class="top-wrapper">
-    <h1>リストタイトル</h1>
+    <h1>アイテムをリストに登録する</h1>
   </div>
-    <%= form_with model: @list, local: true do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
       <%= render 'shared/error_messages'%>
       <p>
         <%= f.label :name %>
@@ -15,7 +15,7 @@
       </p>
 
       <p>
-        <%= f.submit "リストを追加する", class: "btn btn-primary" %>
+        <%= f.submit "登録してリスト一覧に遷移", class: "btn btn-primary" %>
       </p>
     <% end %>
 </div>

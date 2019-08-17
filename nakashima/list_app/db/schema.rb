@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_143351) do
+ActiveRecord::Schema.define(version: 2019_08_16_100951) do
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.bigint "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
+  end
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -30,5 +39,6 @@ ActiveRecord::Schema.define(version: 2019_08_15_143351) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "items", "lists"
   add_foreign_key "lists", "users"
 end

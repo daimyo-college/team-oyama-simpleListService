@@ -1,2 +1,13 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div class="top-wrapper">
+  <div class=" text-center">
+    <div class="show-top">
+      <h1><%= @list.name %>のリスト</h1>
+    </div>
+    <div class="show-body">
+      <p><%= render @items %></p>
+    </div>
+    <div class="show-button">
+      <%= link_to 'アイテムを追加する', "/lists/#{@list.id}/new", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

@@ -17,4 +17,15 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # def current_list
+  #   if session[:user_id] && 
+  # end
+  # def current_list
+  #   @list = @user.lists.build
+  #   @current_list = @list.id
+  # end
+  # def current_list
+  #   @current_list = List.find_by(id: params[:id])
+  # end
 end

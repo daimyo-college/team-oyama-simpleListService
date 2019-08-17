@@ -1,17 +1,21 @@
 class ListsController < ApplicationController
-  skip_before_action :login_required
+  before_action :login_required, only: [:new, :edit, :create]
 
   def index
     @lists = List.all
   end
 
-  def show
+  def show #/lists/:id
+    @user = current_user
+    @list = @user.lists.find_by(params[:id])
+    @items =  @list.items #render @items のためのもの
   end
 
   def new
-    # binding.pry
     @user = current_user
     @list = @user.lists.build
+    
+    # @item = @list.items.build
   end
 
   def edit
@@ -21,7 +25,7 @@ class ListsController < ApplicationController
     @user = current_user
     @list = @user.lists.build(list_params)
     if @list.save
-      redirect_to user_path(@user), notice: "リストを登録しました"
+      redirect_to lists_path, notice: "アイテムを登録してください"
     else
       render 'new'
     end

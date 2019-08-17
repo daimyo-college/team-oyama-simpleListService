@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :login_required, only: [:show, :edit]
+
   def index
     @users = User.all
   end
@@ -21,8 +23,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @lists = @user.lists
   end
-
-
 
   def edit
   end

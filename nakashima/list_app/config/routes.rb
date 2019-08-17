@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  get '/lists/:id/new',  to: 'items#new'
 
   resources :users
   
@@ -8,5 +9,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :lists
+
+  resources :items, except: [:new]
+  
   
 end

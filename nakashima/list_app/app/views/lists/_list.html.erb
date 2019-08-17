@@ -1,4 +1,4 @@
 <li id="list-<%= list.id %>">
-  <span class="list_name"><%= link_to list.name,  '#プロダクトのshowページに飛ばす' %></span> 
+  <span class="list_name"><%= link_to list.name, list_path(list) %></span> 
   <span class="content"><%= list.content %></span>
 </li>
