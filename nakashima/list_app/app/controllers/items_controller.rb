@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @list = List.find(params[:id])
     @item = @list.items.build(items_params)
     if @item.save
