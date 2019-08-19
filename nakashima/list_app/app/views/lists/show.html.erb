@@ -4,7 +4,9 @@
       <h1><%= @list.name %>のリスト</h1>
     </div>
     <div class="show-body">
-      <p><%= render @items %></p>
+      <% @items.each do |item| %>
+        <p>アイテム名：<%= link_to item.name, "#" %>,　アイテム詳細：<%= item.content %></p>
+      <% end %>
     </div>
     <div class="show-button">
       <%= link_to 'アイテムを追加する', "/lists/#{@list.id}/new", class: "btn btn-primary" %>

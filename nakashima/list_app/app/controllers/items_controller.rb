@@ -31,9 +31,9 @@ class ItemsController < ApplicationController
     @list = List.find(params[:item][:list_id])
     @item = @list.items.build(item_params)
     if @item.save
-      redirect_to "/lists/#{@list.id}", notice: "アイテムを登録しました。"
+      redirect_to list_path(@list), notice: "アイテムを登録しました。"
     else
-      render 'new'
+      render "users"
     end
   end
 

@@ -6,9 +6,10 @@ class ListsController < ApplicationController
   end
 
   def show #/lists/:id
+    # binding.pry
     @user = current_user
-    @list = @user.lists.find_by(params[:id])
-    @items =  @list.items #render @items のためのもの
+    @list = @user.lists.find(params[:id])
+    @items =  @list.items.where(list_id: @list.id) #render @items のためのもの
   end
 
   def new
