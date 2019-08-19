@@ -1,0 +1,24 @@
+<header class="header">
+  <nav class="nav">
+    <ul class="header_menu">
+      <li class="nav-link"><%= link_to 'マイページ', "#" %></li>
+      <li class="header_menu_title"><%= link_to "treebooks", root_path, class: "nav-link" %></li>
+      <li>
+        <ul class="header_menu_inner">
+          <% if user_signed_in? %>
+            <% if false %>
+            <%# どういじってもエラーが出る %>
+            <li class="nav-link"><strong><%= link_to current_user.name, pages_show_path %></strong></li>
+            <% end %>
+            <li class="nav-link"><%= link_to "リストを作成", "#", class: "nav-link listNew" %></li>
+            <li class="nav-link"><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+            <li class="nav-link"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="nav-link"><%= link_to '登録', new_user_registration_path %></li>
+            <li class="nav-link"><%= link_to 'ログイン', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
