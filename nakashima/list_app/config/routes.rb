@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get '/lists/:id/new',  to: 'items#new'
   # post '/items/:id',      to: 'items#create' 
   resources :items, except: [:new]
-  
+  # resources :items
+
 end

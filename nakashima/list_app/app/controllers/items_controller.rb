@@ -28,11 +28,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @list = List.find(params[:id])
-    @item = @list.items.build(items_params)
+    @list = List.find(params[:item][:list_id])
+    @item = @list.items.build(item_params)
     if @item.save
-      redirect_to list_path(@list), notice: "アイテムを登録しました。"
+      redirect_to "/lists/#{@list.id}", notice: "アイテムを登録しました。"
     else
       render 'new'
     end
