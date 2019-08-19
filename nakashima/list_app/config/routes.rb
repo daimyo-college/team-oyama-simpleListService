@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get '/lists/:id/new',  to: 'items#new'
 
   resources :users
   
@@ -10,7 +9,8 @@ Rails.application.routes.draw do
 
   resources :lists
 
+  get '/lists/:id/new',  to: 'items#new'
+  # post '/items/:id',      to: 'items#create' 
   resources :items, except: [:new]
-  
   
 end

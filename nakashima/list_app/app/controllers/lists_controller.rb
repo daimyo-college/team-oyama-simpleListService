@@ -25,7 +25,7 @@ class ListsController < ApplicationController
     @user = current_user
     @list = @user.lists.build(list_params)
     if @list.save
-      redirect_to lists_path, notice: "アイテムを登録してください"
+      redirect_to  user_path(@user), notice: "アイテムを登録してください"
     else
       render 'new'
     end

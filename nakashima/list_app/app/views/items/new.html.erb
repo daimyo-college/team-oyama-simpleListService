@@ -2,7 +2,7 @@
   <div class="top-wrapper">
     <h1>アイテムをリストに登録する</h1>
   </div>
-    <%= form_with model: @item, local: true do |f| %>
+    <%= form_with model: @item ,url: "/items/#{@item.id}", locale: true do |f| %>
       <%= render 'shared/error_messages'%>
       <p>
         <%= f.label :name %>
@@ -13,7 +13,6 @@
         <%= f.label :content %>
         <%= f.text_field :content %>
       </p>
-
       <p>
         <%= f.submit "登録してリスト一覧に遷移", class: "btn btn-primary" %>
       </p>
